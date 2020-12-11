@@ -6,12 +6,19 @@
 % vectors.
 
 
-% Taking the Inputs
-k1 = input("Enter the First Stiffness Value ");
-k2 = input("Enter the Second Stiffness Value ");
-m1 = input("Enter the First Mass or Torsional Intertia Value ");
-m2 = input("Enter the Second Mass or Torsional Intertia Value ");
+% Printing Explanation of What is the Input Variables:
 
+
+% Taking the Inputs
+
+fprintf("\n\nNOTE: For Any Element (Spring etc.) that is not Present, put 0 as its Value!\n\n")
+fprintf("\n\nIf There is Only One Wall Present, Start Numbering from That Wall\n\n")
+m1 = input("Enter the First Mass or Torsional Intertia Value: ");
+m2 = input("Enter the Second Mass or Torsional Intertia Value: ");
+
+k1 = input("Enter the First Stiffness Value: ");
+k2 = input("Enter the Second Stiffness Value: ");
+k3 = input("Enter the Third Stiffness Value: ");
 
 % Writing Masses in Matrix Form
 
@@ -20,7 +27,7 @@ M = [m1 0
 
 % Total Stiffnesses in Matrix Form
 K = [k1+k2 -k2
-    -k2 k2];
+    -k2 k2+k3];
 
 % Taking Inverse Square-Root of the Mass Matrix
 
